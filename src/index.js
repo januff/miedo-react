@@ -53,15 +53,15 @@ function Scene() {
 function App() {
   return (
     <div class="main">
-      <Canvas invalidateFrameloop camera={{ fov: 90, position: [0, 0, 1800], rotation: [0, deg(-20), deg(180)], near: 0.1, far: 20000 }}>
+      <Canvas invalidateFrameloop camera={{ fov: 50, position: [500, 0, 1800], rotation: [0, deg(-20), deg(180)], near: 0.1, far: 20000 }}>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.5} position={[300, 300, 4000]} />
         <Scene />
       </Canvas>
       <a href="https://github.com/drcmda/react-three-fiber" class="top-left" children="Github" />
-      <a href="https://twitter.com/0xca0a" class="top-right" children="Twitter" />
+      <a href="https://twitter.com/metagurudotguru" class="top-right" children="Twitter" />
       <a href="https://github.com/react-spring/react-spring" class="bottom-left" children="+ react-spring" />
-      <a href="https://www.instagram.com/tina.henschel/" class="bottom-right" children="Illustrations @ Tina Henschel" />
+      <a href="https://www.codepen.com/januff" class="bottom-right" children="Developer @ Joseph Anuff" />
       <span class="header">REACT THREE FIBER</span>
     </div>
   )
