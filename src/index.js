@@ -1,68 +1,108 @@
 import ReactDOM from 'react-dom'
-import React, { useState, useEffect } from 'react'
-// A React renderer for Three-js: https://github.com/drcmda/react-three-fiber
-import { Canvas } from 'react-three-fiber'
-// A React x-platform animation library: https://github.com/react-spring/react-spring
-import { useTransition, useSpring, animated as a } from 'react-spring/three'
-import { svgs, colors, deg, doubleSide } from './resources/helpers'
+// WebGL code from https://tympanus.net/Development/DistortionHoverEffect/
 
-/** This component renders a shape */
-function Shape({ shape, rotation, position, color, opacity, index }) {
+import React, { useState, useCallback, useMemo } from 'react'
+import * as THREE from 'three'
+import { vertexShader, fragmentShader } from './resources/shaders/XFadeShader'
+import { Canvas, useThree } from 'react-three-fiber'
+import { useSpring, a } from 'react-spring/three'
+
+
+import mie1 from './resources/images/miedo-1.jpg'
+import miea from './resources/images/svg/miedo.svg'
+import spi1 from './resources/images/spick-1.jpg'
+import spi2 from './resources/images/spick-2.jpg'
+import spia from './resources/images/spick-a.jpg'
+// import spib from './resources/images/spick-b.jpg'
+import nam1 from './resources/images/names-1.jpg'
+import nam2 from './resources/images/names-2.jpg'
+import nama from './resources/images/names-a.jpg'
+// import namb from './resources/images/names-b.jpg'
+import kil1 from './resources/images/killed-1.jpg'
+import kil2 from './resources/images/killed-2.jpg'
+import kila from './resources/images/killed-a.jpg'
+// import kilb from './resources/images/killed-b.jpg'
+import tea1 from './resources/images/teach-1.jpg'
+import tea2 from './resources/images/teach-2.jpg'
+// import teaa from './resources/images/teach-a.jpg'
+import teab from './resources/images/teach-b.jpg'
+import gre1 from './resources/images/greasy-1.jpg'
+import gre2 from './resources/images/greasy-2.jpg'
+import grea from './resources/images/greasy-a.jpg'
+// import greb from './resources/images/greasy-b.jpg'
+
+
+import './styles.css'
+
+// data.map(([url1, url2, disp, intensity, x, y, factor, z, scale], index) => (
+
+const data = [
+  [mie1, tea2, teab, -1.],
+  [gre1, gre2, grea, -0.4],
+  [tea1, tea2, teab, 0.9],
+  [spi1, spi2, spia, -0.5],
+  [nam1, nam2, nama, 0.5],
+  [kil1, kil2, kila, -0.5]
+]
+
+function ImageWebgl({ url1, url2, disp, intensity, hovered }) {
+  const { progress } = useSpring({ progress: hovered ? 1 : 0 })
+
+  const { gl, invalidate } = useThree()
+
+  const args = useMemo(() => {
+    const loader = new THREE.TextureLoader()
+    const texture1 = loader.load(url1, invalidate)
+    const texture2 = loader.load(url2, invalidate)
+    const dispTexture = loader.load(disp, invalidate)
+
+    dispTexture.wrapS = dispTexture.wrapT = THREE.RepeatWrapping
+    texture1.magFilter = texture2.magFilter = THREE.LinearFilter
+    texture1.minFilter = texture2.minFilter = THREE.LinearFilter
+
+    texture1.anisotropy = gl.capabilities.getMaxAnisotropy()
+    texture2.anisotropy = gl.capabilities.getMaxAnisotropy()
+    return {
+      uniforms: {
+        effectFactor: { type: 'f', value: intensity },
+        dispFactor: { type: 'f', value: 0 },
+        texture: { type: 't', value: texture1 },
+        texture2: { type: 't', value: texture2 },
+        disp: { type: 't', value: dispTexture },
+      },
+      vertexShader,
+      fragmentShader,
+    }
+  }, [url1, url2, disp])
+
   return (
-    <a.mesh rotation={rotation} position={position.interpolate((x, y, z) => [x, y, z + -index * 50])}>
-      <a.meshPhongMaterial attach="material" color={color} opacity={opacity} side={doubleSide} depthWrite={false} transparent />
-      <shapeBufferGeometry attach="geometry" args={[shape]} />
-    </a.mesh>
+    <mesh>
+      <planeBufferGeometry attach="geometry" args={[8, 8]} />
+      <a.shaderMaterial attach="material" args={[args]} uniforms-dispFactor-value={progress} />
+    </mesh>
   )
 }
 
-/** This component sets up a background plane and transitions a group of shapes */
-function Scene() {
-  const [page, setPage] = useState(0)
-  const [shapes, setShapes] = useState([])
-  // Switches scenes every 4 seconds
-  useEffect(() => void setInterval(() => setPage(i => (i + 1) % svgs.length), 3000), [])
-  // Converts current SVG into mesh-shapes: https://threejs.org/docs/index.html#examples/loaders/SVGLoader
-  useEffect(() => void svgs[page].then(setShapes), [page])
-  // This spring controls the background color animation
-  const { color } = useSpring({ color: colors[page] })
-  // This one is like a transition group, but instead of handling div's it mounts/unmounts meshes in a fancy way
-  const transitions = useTransition(shapes, item => item.shape.uuid, {
-    from: { rotation: [-0.2, 0.9, 0], position: [0, 50, -200], opacity: 0 },
-    enter: { rotation: [0, 0, 0], position: [0, 0, 0], opacity: 1 },
-    leave: { rotation: [0.2, -0.9, 0], position: [0, -400, 200], opacity: 0 },
-    config: { mass: 30, tension: 800, friction: 190, precision: 0.0001 },
-    ...{ order: ['leave', 'enter', 'update'], trail: 15, lazy: true, unique: true, reset: true }
-  })
+function Image(props) {
+  const [hovered, setHover] = useState(false)
+  const hover = useCallback(() => setHover(true), [])
+  const unhover = useCallback(() => setHover(false), [])
   return (
-    <>
-      <mesh scale={[20000, 20000, 1]} rotation={[0, deg(-20), 0]}>
-        <planeGeometry attach="geometry" args={[1, 1]} />
-        <a.meshPhongMaterial attach="material" color={color} depthTest={false} />
-      </mesh>
-      <group position={[1600, -700, page]} rotation={[0, deg(180), 0]}>
-        {transitions.map(({ item, key, props }) => (
-          <Shape key={key} {...item} {...props} />
-        ))}
-      </group>
-    </>
-  )
-}
-
-/** Main component */
-function App() {
-  return (
-    <div class="main">
-      <Canvas invalidateFrameloop camera={{ fov: 50, position: [500, 0, 1800], rotation: [0, deg(-20), deg(180)], near: 0.1, far: 20000 }}>
-        <ambientLight intensity={0.5} />
-        <spotLight intensity={0.5} position={[300, 300, 4000]} />
-        <Scene />
+    <div className="item" onPointerOver={hover} onPointerOut={unhover}>
+      <Canvas className="canvas" invalidateFrameloop>
+        <ImageWebgl {...props} hovered={hovered} />
       </Canvas>
-      <a href="https://github.com/drcmda/react-three-fiber" class="top-left" children="Github" />
-      <a href="https://twitter.com/metagurudotguru" class="top-right" children="Twitter" />
-      <a href="https://github.com/react-spring/react-spring" class="bottom-left" children="+ react-spring" />
-      <a href="https://www.codepen.com/januff" class="bottom-right" children="Developer @ Joseph Anuff" />
-      <span class="header">REACT THREE FIBER</span>
+    </div>
+  )
+}
+
+export default function App() {
+  return (
+    <div className="grid">
+      {data.map(([url1, url2, disp, intensity], index) => (
+        <Image key={index} url1={url1} url2={url2} disp={disp} intensity={intensity} />
+      ))}
+      <img alt="!Miedo, Terror, Espanto!" className="miedo" src={miea}></img>
     </div>
   )
 }

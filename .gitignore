@@ -11,6 +11,9 @@
 # production
 /build
 
+# custom exclusions
+/src/resources/*.js
+
 # misc
 .DS_Store
 .env.local
