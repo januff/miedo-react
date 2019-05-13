@@ -12,7 +12,9 @@
 /build
 
 # custom exclusions
-/src/resources/*.js
+/src/resources/SVGLoader.js
+/src/resources/helpers.js
+
 
 # misc
 .DS_Store
