@@ -7,7 +7,6 @@ import { vertexShader, fragmentShader } from './resources/shaders/XFadeShader'
 import { Canvas, useThree } from 'react-three-fiber'
 import { useSpring, a } from 'react-spring/three'
 
-
 import mie1 from './resources/images/miedo-1.jpg'
 import miea from './resources/images/svg/miedo.svg'
 import spi1 from './resources/images/spick-1.jpg'

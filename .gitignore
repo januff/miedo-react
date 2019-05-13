@@ -12,8 +12,8 @@
 /build
 
 # custom exclusions
-src/resources/SVGLoader.js
-src/resources/helpers.js
+/src/resources/SVGLoader.js
+/src/resources/helpers.js
 
 
 # misc
