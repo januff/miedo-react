@@ -30,7 +30,6 @@ import gre2 from './resources/images/greasy-2.jpg'
 import grea from './resources/images/greasy-a.jpg'
 // import greb from './resources/images/greasy-b.jpg'
 
-
 import './styles.css'
 
 // data.map(([url1, url2, disp, intensity, x, y, factor, z, scale], index) => (
