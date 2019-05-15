@@ -19,16 +19,17 @@ import nama from './resources/images/names-a.jpg'
 // import namb from './resources/images/names-b.jpg'
 import kil1 from './resources/images/killed-1.jpg'
 import kil2 from './resources/images/killed-2.jpg'
-import kila from './resources/images/killed-a.jpg'
-// import kilb from './resources/images/killed-b.jpg'
+// import kila from './resources/images/killed-a.jpg'
+import kilb from './resources/images/killed-b.jpg'
 import tea1 from './resources/images/teach-1.jpg'
 import tea2 from './resources/images/teach-2.jpg'
 // import teaa from './resources/images/teach-a.jpg'
 import teab from './resources/images/teach-b.jpg'
 import gre1 from './resources/images/greasy-1.jpg'
 import gre2 from './resources/images/greasy-2.jpg'
-import grea from './resources/images/greasy-a.jpg'
+// import grea from './resources/images/greasy-a.jpg'
 // import greb from './resources/images/greasy-b.jpg'
+import grec from './resources/images/greasy-c.jpg'
 
 import './styles.css'
 
@@ -36,11 +37,11 @@ import './styles.css'
 
 const data = [
   [mie1, tea2, teab, -1.],
-  [gre1, gre2, grea, -0.4],
-  [tea1, tea2, teab, 0.9],
-  [spi1, spi2, spia, -0.5],
-  [nam1, nam2, nama, 0.5],
-  [kil1, kil2, kila, -0.5]
+  [gre2, gre1, grec, -0.4],
+  [tea2, tea1, teab, 0.9],
+  [spi2, spi1, spia, -0.5],
+  [nam2, nam1, nama, 0.5],
+  [kil2, kil1, kilb, -0.5]
 ]
 
 function ImageWebgl({ url1, url2, disp, intensity, hovered }) {
