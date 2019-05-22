@@ -5,11 +5,13 @@
   "dependencies": {
     "lodash-es": "^4.17.11",
     "react": "^16.8.6",
+    "react-app-polyfill": "^1.0.1",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "react-spring": "^8.0.20",
     "react-three-fiber": "^2.1.1",
-    "three": "^0.104.0"
+    "three": "^0.104.0",
+    "wouter": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
