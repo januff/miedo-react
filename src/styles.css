@@ -3,7 +3,7 @@
   src: local('RigorMortis'), url(./resources/fonts/RigorMortis.woff2) format('woff2');
 }
 
-/* User-select, tap-highlight, and outline CSS below all seems necessary to prevent blue highlighting of panels for Chrome on Android:
+/* User-select, tap-highlight, and outline CSS below to prevent blue highlighting of panels for Chrome on Android, as per these answers:
 https://stackoverflow.com/questions/21003535/anyway-to-prevent-the-blue-highlighting-of-elements-in-chrome-when-clicking-quic */
 
 * {
@@ -26,13 +26,14 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #ccc;
-  box-shadow: inset 5px 5px 100px rgba(0, 0, 0, 0.4);
+  background-color: #bbb;
+  box-shadow: inset 5px 5px 100px rgba(0, 0, 0, 0.3);
   -webkit-font-smoothing: antialiased;
   overflow: auto;
   position: fixed;
   overscroll-behavior-y: none;
 }
+
 #root::after {
   content: ""; overflow: hidden;
   background-image: url(./resources/images/png/white-paperboard.png);
@@ -81,7 +82,7 @@ canvas {
 .editora {
   position: fixed;
   top: -7px;
-  left: -4px;
+  left: -7px;
   width: 60px;
   cursor: grab;
   z-index: 2000;
