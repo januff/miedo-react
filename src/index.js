@@ -14,6 +14,13 @@ const titles = Object.keys(stories)
 
 console.log(stories)
 
+function loadImages() {
+  const loadTest = new Promise((resolve, reject) => {
+    resolve('test');
+  });
+  return loadTest
+}
+
 // story.map(([url1, url2, disp, intensity, x, y, factor, z, scale], index) => (
 
 function ImageWebgl({ url1, url2, disp, intensity, hovered }) {
@@ -67,7 +74,7 @@ function Image(props) {
   )
 }
 
-const ActiveLink = props => {
+function ActiveLink(props) {
   const [isActive] = useRoute(props.href);
   return (
     <Link {...props}>
@@ -93,8 +100,15 @@ function Titles() {
 function Story() {
   const [match, params] = useRoute('/story/:title')
   const title = match ? params.title : titles[0]
+  
   // const [panels, setPanels] = useState([])
+  // const [loaded, setLoaded] = useState(stories)
+
+  // console.log('loaded at first:', loaded)
   // useEffect(() => void loadImages(title).then(setPanels), [title])
+
+  // useEffect(() => void loadImages().then(setLoaded), [title])
+  // console.log('loaded after', loaded)
 
   // const transitions = useTransition(panels, item =>
   //   item.uuid, {
@@ -107,13 +121,15 @@ function Story() {
   //     unique: true,
   //     reset: true,
   // })
+ 
+  // const props = useSpring({opacity: 1, from: {opacity: 0}})
 
   return (
-      <div className="grid">
-        {stories[title].map(([url1, url2, disp, intensity], index) => (
-          <Image key={index} url1={url1} url2={url2} disp={disp} intensity={intensity} />
-        ))}
-      </div>
+    <div className="grid">
+      {stories[title].map(([url1, url2, disp, intensity], index) => (
+        <Image key={index} url1={url1} url2={url2} disp={disp} intensity={intensity} />
+      ))}
+    </div>
   )
 }
 
