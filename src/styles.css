@@ -26,23 +26,17 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #fff;
-  box-shadow: inset 5px 5px 150px rgba(255,255,255,0.9);
+  background-color: #ccc;
+  box-shadow: inset 5px 5px 100px rgba(0, 0, 0, 0.4);
   -webkit-font-smoothing: antialiased;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   overflow: auto;
   position: fixed;
   overscroll-behavior-y: none;
 }
 #root::after {
   content: ""; overflow: hidden;
-  background-image: url("http://www.transparenttextures.com/patterns/grey-jean.png");
-  background-color: rgba(0, 0, 0, .35);
+  background-image: url(./resources/images/png/white-paperboard.png);
+  background-size: 100px;
   background-blend-mode: difference;
   top: 0;
   left: 0;
@@ -79,7 +73,7 @@ canvas {
   height: calc(50vw - 20px);
   background: #FCD02C;
   box-shadow: inset 5px 5px 30px rgba(0,0,0,0.1);
-  -webkit-mask-image: url(https://s3.amazonaws.com/metaguru/panels/square-inner-rc1.png);
+  -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
   -webkit-mask-size: 100% 100%;
   z-index: 2000;
 }
