@@ -24,10 +24,7 @@ export default function App() {
           src={editora} 
           onClick={() => setModalOpen(true)} />
       {modalOpen && (
-        <Modal
-          title="Editora Sol"
-          img={editora}
-          content="EC Comics, Mexican Bootlegs"
+        <Modal img={editora}
           onClose={() => setModalOpen(false)}
         />
       )}
