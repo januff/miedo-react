@@ -155,8 +155,7 @@ canvas {
 
 .modal {
   background-color: #FCD02C;
-  border-radius: 20px;
-  padding: 2rem 3rem;
+  padding: 2rem 2.8rem;
   max-width: 440px;
   text-align: left;
   -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
