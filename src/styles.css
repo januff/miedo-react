@@ -144,7 +144,7 @@ canvas {
   position: fixed;
   /* text-transform: uppercase; */
   font-family: 'RigorMortis';
-  font-size: 16px;
+  font-size: 15px;
   top: 0;
   left: 0;
   height: 100%;
@@ -157,13 +157,14 @@ canvas {
   background-color: #FCD02C;
   border-radius: 20px;
   padding: 2rem 3rem;
+  max-width: 440px;
   text-align: left;
   -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
   -webkit-mask-size: 100% 100%;
 }
 
 .modal img {
-  max-height: 30vh;
+  max-height: 20vh;
 }
   
 @media only screen and (max-width: 610px) {
