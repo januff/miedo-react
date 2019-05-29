@@ -18,11 +18,11 @@ export default function App() {
       <Titles names={titles} />
       <img alt="!Miedo, Terror, Espanto!" 
           className="miedo" 
-          src={miedo} 
-          onClick={() => setModalOpen(true)} />
+          src={miedo} />
       <img alt="Editora Sol" 
           className="editora" 
-          src={editora} />
+          src={editora} 
+          onClick={() => setModalOpen(true)} />
       {modalOpen && (
         <Modal
           title="Editora Sol"

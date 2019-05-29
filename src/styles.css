@@ -91,7 +91,7 @@ canvas {
   width: 60px;
   cursor: grab;
   z-index: 2000;
-  pointer-events: none;
+  cursor: help;
 }
 
 .miedo {
@@ -100,7 +100,7 @@ canvas {
   top: 32px;
   width: 50vw;
   height: 50vw;
-  cursor: grab;
+  pointer-events: none;
   z-index: 2000;
 }
 
@@ -141,11 +141,16 @@ canvas {
   display: flex;
   padding: 1em;
   position: fixed;
+  text-transform: uppercase;
+  font-family: 'RigorMortis';
+  font-size: 16px;
+  letter-spacing: 2px;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   z-index: 4000;
+  cursor: row-resize;
 }
 
 .modal {
@@ -153,6 +158,8 @@ canvas {
   border-radius: 20px;
   padding: 2rem 3rem;
   text-align: center;
+  -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
+  -webkit-mask-size: 100% 100%;
 }
   
 @media only screen and (max-width: 610px) {
