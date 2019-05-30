@@ -5,5 +5,6 @@ import ActiveLink from './ActiveLink'
 import Titles from './Titles'
 import ImageLoader from './ImageLoader'
 import Story from './Story'
+import GithubCorner from './GithubCorner'
 
-export { Titles, Story, Image, ImageLoader, ImageWebgl, ActiveLink, Modal }
+export { Titles, Story, Image, ImageLoader, ImageWebgl, ActiveLink, Modal, GithubCorner }

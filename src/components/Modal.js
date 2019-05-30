@@ -8,9 +8,8 @@ const Modal = ({ title, img, content, onClose }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal">
-        <img alt="Editora Sol" src={img} />
-        <p>Terra incognita even to comics cognoscenti is the global corpus of translated Americana, published semi-contemporaneously by bootleggers—and occasionally genuine licensees—on seemingly every continent. (And circulating only recently by way of far-flung eBay clones and Facebook Marketplaces.)</p>
-        <p>One of the most prolific such publishers was Mexico City's Editora Sol, who in the early ’60s pushed unauthorized editions of many macabre and controversial EC classics. Presented here are panels from two such translations, Feldstein and Wood's race drama “The Whipping” and Krigstein's “You, Murderer,” both borrowed from the same 1954 issue of <i>Shock Illustrated</i>.</p>
+        <p>For at least one new species of comic book fandom, Facebook's pivot to Groups may have triggered an uncanny origin story. Leveraging the platform's global creep and eager auto-translation, a cosmopolitan cohort is exploiting Facebook's Groups and Marketplace features to discover an archival multi-verse: American comics of every subgenre in bootleg translation, a stochastic phenomenon spanning every era of comic book publishing, and extending from Beirut to Buenos Aires.</p>
+        <p>One of the most prolific such intermediaries was Mexico City's Editora Sol, who in the early ’60s released unauthorized translations of Lafayette Street's notorious EC Comics. Presented here are panels from specimens, Feldstein and Wood's race melodrama “The Whipping” (as “El Castigo”) and Krigstein's Caligari-esque “You, Murderer” (as “Asasino”), both borrowed from the same 1954 issue of <i>Shock Illustrated</i>.</p>
       </div>
     </div>
   );

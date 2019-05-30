@@ -106,25 +106,21 @@ canvas {
 
 .titles {
   position: fixed;
-  top: 5px;
+  bottom: 5px;
   right: 5px;
   z-index: 2000;
 }
 
 .titles a {
-  text-transform: uppercase;
+  padding: 0 10px 4px;
+  background-color: #222;
+  -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
+  -webkit-mask-size: 100% 100%;
   text-decoration: none;
   color: #eee;
   font-family: 'RigorMortis';
   font-size: 28px;
   letter-spacing: 2px;
-  -webkit-text-stroke: 1px #3d3c3d;
-  text-shadow:
-      1px 1px 0 #3d3c3d,
-    -1px -1px 0 #3d3c3d, 
-     1px -1px 0 #3d3c3d,
-     -1px 1px 0 #3d3c3d,
-      1px 1px 0 #3d3c3d;
   transition: color 240ms ease-out;
   margin-right: 5px;
 }
@@ -165,7 +161,43 @@ canvas {
 .modal img {
   max-height: 20vh;
 }
+
+.GithubCorner {
+  z-index: 5000;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
   
+.GithubCorner__svg {
+  height: 80px;
+  width: 80px;
+}
+.GithubCorner:hover .GithubCorner__octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave {
+    0%, 100% {
+        transform: rotate(0)
+    }
+    20%, 60% {
+        transform: rotate(-25deg)
+    }
+    40%, 80% {
+        transform: rotate(10deg)
+    }
+}
+
+@media (max-width:500px) {
+    .GithubCorner:hover .GithubCorner__octo-arm {
+        animation: none
+    }
+    .GithubCorner .GithubCorner__octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+}
+
 @media only screen and (max-width: 610px) {
   .grid {
     margin: 38px 10px 5px 5px;

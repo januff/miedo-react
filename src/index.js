@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import React, { useState } from 'react'
 import { useRoute } from 'wouter'
-import { Titles, Story, Modal } from "./components/";
+import { Titles, Story, Modal, GithubCorner } from "./components";
 import { stories, miedo, editora } from './resources/images'
 import './styles.css'
 
@@ -28,6 +28,11 @@ export default function App() {
           onClose={() => setModalOpen(false)}
         />
       )}
+      <GithubCorner 
+        color="#FCD02C" 
+        backgroundColor="#222"
+        target="blank"
+        url="https://github.com/januff/miedo-react" />
     </div>
   )
 }
