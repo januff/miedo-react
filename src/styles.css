@@ -50,7 +50,7 @@ body,
 .grid {
   display: flex;
   flex-wrap: wrap;
-  margin: 38px 0 5px 5px;
+  margin: 14px 0 5px 5px;
   z-index: 1000;
 }
 
@@ -97,7 +97,7 @@ canvas {
 .miedo {
   position: fixed;
   left: 2px;
-  top: 32px;
+  top: 4px;
   width: 50vw;
   height: 50vw;
   pointer-events: none;
@@ -198,9 +198,9 @@ canvas {
     }
 }
 
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 520px) {
   .grid {
-    margin: 38px 10px 5px 5px;
+    margin: 14px 14px 7px 7px;
   }
   .grid .item ,
   .miedo {
@@ -208,6 +208,6 @@ canvas {
     height: 100vw;
   }
   .miedo {
-    bottom: -50vw;
+    /* bottom: -50vw; */
   }
 }

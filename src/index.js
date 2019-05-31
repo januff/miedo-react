@@ -10,7 +10,7 @@ export default function App() {
   const [match, params] = useRoute('/story/:title')
   const title = match ? params.title : titles[0]
   const story = stories[title]
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(true)
  
   return (
     <div className="container">
