@@ -26,8 +26,8 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #bbb;
-  box-shadow: inset 5px 5px 100px rgba(0, 0, 0, 0.3);
+  background-color: #111;
+  box-shadow: inset 5px 5px 100px rgba(0, 0, 0, 0.5);
   -webkit-font-smoothing: antialiased;
   overflow: auto;
   position: fixed;
@@ -135,12 +135,14 @@ canvas {
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.8);
   background-image: url(./resources/images/png/grid.png);
+  background-blend-mode: difference;
   display: flex;
   padding: 1em;
   position: fixed;
   /* text-transform: uppercase; */
   font-family: 'RigorMortis';
-  font-size: 15px;
+  font-size: 17px;
+  line-height: 1.25em;
   top: 0;
   left: 0;
   height: 100%;
@@ -150,9 +152,11 @@ canvas {
 }
 
 .modal {
-  background-color: #FCD02C;
+  color: #eee;
+  background-color: black;
   padding: 2rem 2.8rem;
-  max-width: 440px;
+  max-width: 640px;
+  max-height: 80vh;
   text-align: left;
   -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
   -webkit-mask-size: 100% 100%;
@@ -160,6 +164,13 @@ canvas {
 
 .modal img {
   max-height: 20vh;
+}
+
+button {
+  z-index: 6000;
+  position: fixed;
+  top: 0;
+  right: 50%;
 }
 
 .GithubCorner {
@@ -198,7 +209,7 @@ canvas {
     }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 550px) {
   .grid {
     margin: 14px 14px 7px 7px;
   }
@@ -209,5 +220,8 @@ canvas {
   }
   .miedo {
     /* bottom: -50vw; */
+  }
+  .modal-overlay {
+    font-size: 15px;
   }
 }

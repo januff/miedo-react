@@ -6,7 +6,7 @@ const Image = (props) => {
   const [hovered, setHover] = useState(false)
   const hover = useCallback(() => setHover(true), [])
   const unhover = useCallback(() => setHover(false), [])
-
+    
   return (
     <div className="item"
       onPointerOver={hover}
@@ -20,3 +20,10 @@ const Image = (props) => {
 }
 
 export default Image
+
+// import { useSpring, a } from 'react-spring/three'
+// const { fade } = useSpring({
+//   opacity: .5,
+//   from: { opacity: 0 },
+// })
+// style={fade}

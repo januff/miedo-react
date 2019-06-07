@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLockBodyScroll } from "../resources/util/";
+import { useLockBodyScroll } from "../resources/util";
 
 const Modal = ({ title, img, content, onClose }) => {
   // Call hook to lock body scroll
@@ -7,9 +7,8 @@ const Modal = ({ title, img, content, onClose }) => {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal">
-        <p>For at least one new species of comic book fandom, Facebook's pivot to Groups may have spun a classic origin. Leveraging the platform's global sprawl and cosmopolitan AI, an obsessive collector cohort has been exploiting the site's recently emphasized Groups and Marketplace tabs to surface a surreal archival multi-verse: American comics in bootleg translation, a stochastic impulse which appears to have spanned decades and hemispheres, from locales as far-flung as Beirut, Buenos Aires, and Jakarta.</p>
-        <p>One of the most prolific outposts was Mexico City's Editora Sol, who in the early ’60s published unauthorized editions of Lafayette Street's EC Comics, then barely five years undead. Presented here are panels from two recently exhumed translations, Feldstein and Wood's race melodrama “The Whipping” (as “El Castigo”) and Krigstein's hallucinatory “You, Murderer” (as “Asesino.”) Both are swiped from the same issue of <i>Shock SuspenStories</i> famously defended by publisher Bill Gaines before Senate Subcommittee in 1954.</p>
+      <div className="modal panel">
+        <p>I hate to say that, Senator, but I think Hitler was a beginner compared to the comic-book industry. They get the children much younger. They teach them race hatred at the age of 4 before they can read. Let me give you an example of a comic book which I think is on the stand right now. It may have disappeared the last few days. You know at the present moment New York City and other cities have a great social problem in integrating immigrating Puerto Ricans. It is very important to establish peace in these neighborhoods where friction may arise, or has a risen. This particular comic book that I am referring to now has a story in which a derogatory term for Puerto Ricans, which I will not repeat here, but which is a common derogatory term, is repeated 12 times in one story. This greasy so and so, this dirty so and so. It is pointed out that a Spanish Catholic family moved into this neighborhood ─ utterly unnecessary. What is the point of the story? The point of the story is that then somebody gets beaten to death. The only error is that the man who must get beaten to death is not a man; it is a girl.</p>
       </div>
     </div>
   );

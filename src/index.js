@@ -1,9 +1,16 @@
 import ReactDOM from 'react-dom'
 import React, { useState } from 'react'
 import { useRoute } from 'wouter'
-import { Titles, Story, Modal, GithubCorner } from "./components";
-import { stories, miedo, editora } from './resources/images'
-import './styles.css'
+import { Titles, Story, Modal, GithubCorner } from './components';
+import { stories, miedo, editora, DOTS, PANEL } from './resources/images'
+import './styles.css';
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  .panel {
+    -webkit-mask-image: url("${PANEL}");
+  }
+`
 
 export default function App() {
   const titles = Object.keys(stories)
@@ -11,9 +18,10 @@ export default function App() {
   const title = match ? params.title : titles[0]
   const story = stories[title]
   const [modalOpen, setModalOpen] = useState(true)
- 
+
   return (
     <div className="container">
+      <GlobalStyle />
       <Story story={story} />
       <Titles names={titles} />
       <img alt="!Miedo, Terror, Espanto!" 
@@ -24,7 +32,8 @@ export default function App() {
           src={editora} 
           onClick={() => setModalOpen(true)} />
       {modalOpen && (
-        <Modal img={editora}
+        <Modal alt="Info"
+          img={editora}
           onClose={() => setModalOpen(false)}
         />
       )}

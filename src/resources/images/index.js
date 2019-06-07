@@ -1,3 +1,5 @@
+import { DOTS, PANEL } from './constants'
+
 // "¡Miedo, Terror, Espanto!" logo
 import miedo from './svg/miedo-logo.svg'
 
@@ -64,4 +66,4 @@ const castigo = [
 
 const stories = { asesino, castigo }
   
-export { stories, miedo, editora }
+export { stories, miedo, editora, DOTS, PANEL }
