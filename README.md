@@ -1,6 +1,6 @@
-## !Mideo, Terror, Espanto!
+### !Mideo, Terror, Espanto!
 
-One of fandom's tastiest mid-century bootleggers was Mexico City's Editora Sol, who in the early ’60s published unauthorized reissues of EC Comics, then barely five years slain. This demo presents panels from two 1962 translations, Feldstein and Wood's race melodrama “The Whipping” (as “El Castigo”) and Krigstein's hallucinatory “You, Murderer” (as “Asesino.”) Both are swiped from the same issue of <i>Shock SuspenStories</i> famously debated by EC publisher Bill Gaines and psychiatrist Frederic Wertham before Senate Subcommittee in 1954.
+One unusually tasteful mid-century bootlegger was Mexico City's Editora Sol, who in the early ’60s published unauthorized reissues of EC Comics, stamped out domestically only five years earlier. This demo presents panels from two 1962 translations, Feldstein and Wood's hate parable “The Whipping” (as “El Castigo”) and Krigstein's Expressionist “You, Murderer” (as “Asesino.”) Both are swiped from the same issue of <i>Shock SuspenStories</i> famously debated by EC publisher William Gaines and psychiatrist Frederic Wertham before Senate Subcommittee in 1954.
 
 ### Bootstrapped with create-react-app
 
