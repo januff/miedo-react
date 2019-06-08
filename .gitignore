@@ -1,5 +1,15 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Ref on forgetting ignored files: https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore/19095988#19095988
+
+# First:
+
+# git rm -r --cached . 
+# git add .
+# Then:
+
+# git commit -am "Remove ignored files"
+
 # dependencies
 /node_modules
 /.pnp

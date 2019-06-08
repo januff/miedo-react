@@ -135,7 +135,8 @@ canvas {
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.8);
   background-image: url(./resources/images/png/grid.png);
-  background-blend-mode: difference;
+  background-blend-mode: screen;
+  background-size: 100px;
   display: flex;
   padding: 1em;
   position: fixed;
@@ -154,7 +155,7 @@ canvas {
 .modal {
   color: #eee;
   background-color: black;
-  padding: 2rem 2.8rem;
+  padding: 1rem 2.2rem;
   max-width: 640px;
   max-height: 80vh;
   text-align: left;
@@ -223,5 +224,17 @@ button {
   }
   .modal-overlay {
     font-size: 15px;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .modal-overlay {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  .modal-overlay {
+    font-size: 14px;
   }
 }
