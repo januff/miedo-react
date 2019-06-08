@@ -133,9 +133,9 @@ canvas {
 .modal-overlay {
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
   background-image: url(./resources/images/png/grid.png);
-  background-blend-mode: screen;
+  background-blend-mode: exclusion;
   background-size: 100px;
   display: flex;
   padding: 1em;
@@ -157,7 +157,7 @@ canvas {
   background-color: black;
   padding: 1rem 2.2rem;
   max-width: 640px;
-  max-height: 80vh;
+  max-height: 90vh;
   text-align: left;
   -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
   -webkit-mask-size: 100% 100%;

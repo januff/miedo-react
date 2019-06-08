@@ -3,7 +3,12 @@ import React, { useState } from 'react'
 import { useRoute } from 'wouter'
 import { Titles, Story, Modal, GithubCorner } from './components';
 import { stories, miedo, editora, DOTS, PANEL } from './resources/images'
+import { quotes } from "./resources/edit";
 import './styles.css';
+
+
+// Experimenting with style-components below. Appears conducive to abstracting all textures and masks out of CSS and into a master palette of data-URIs,from which more flexible shapes, sizes, and randomizations can be controlled. Need to dig deeper into documentation: https://www.styled-components.com/docs/basics
+
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -17,6 +22,7 @@ export default function App() {
   const [match, params] = useRoute('/story/:title')
   const title = match ? params.title : titles[1]
   const story = stories[title]
+  const quote = quotes[title]
   const [modalOpen, setModalOpen] = useState(true)
 
   return (
@@ -33,7 +39,8 @@ export default function App() {
           onClick={() => setModalOpen(true)} />
       {modalOpen && (
         <Modal alt="Info"
-          img={editora}
+          title={story}
+          content={quote}
           onClose={() => setModalOpen(false)}
         />
       )}
