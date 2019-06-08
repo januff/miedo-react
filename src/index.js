@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
 export default function App() {
   const titles = Object.keys(stories)
   const [match, params] = useRoute('/story/:title')
-  const title = match ? params.title : titles[0]
+  const title = match ? params.title : titles[1]
   const story = stories[title]
   const [modalOpen, setModalOpen] = useState(true)
 

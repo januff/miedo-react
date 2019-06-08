@@ -167,6 +167,10 @@ canvas {
   max-height: 20vh;
 }
 
+.modal em {
+  color: #FCD02C;
+}
+
 button {
   z-index: 6000;
   position: fixed;
