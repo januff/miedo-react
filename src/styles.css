@@ -157,7 +157,7 @@ canvas {
   background-color: black;
   padding: 1rem 2.2rem;
   max-width: 640px;
-  max-height: 90vh;
+  max-height: 94vh;
   text-align: left;
   -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
   -webkit-mask-size: 100% 100%;
@@ -228,6 +228,12 @@ button {
   }
   .modal-overlay {
     font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .modal-overlay {
+    font-size: 13px;
   }
 }
 
