@@ -64,7 +64,7 @@ body,
   background-image: url(./resources/images/png/grid.png);
   background-size: 310px;
   background-blend-mode: difference;
-  -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
+  -webkit-mask-image: url(./resources/images/png/panel-b.png);
   -webkit-mask-size: 100% 100%;
   z-index: 1000;
   
@@ -114,7 +114,7 @@ canvas {
 .titles a {
   padding: 0 10px 4px;
   background-color: #222;
-  -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
+  -webkit-mask-image: url(./resources/images/png/panel-b.png);
   -webkit-mask-size: 100% 100%;
   text-decoration: none;
   color: #eee;
@@ -159,7 +159,7 @@ canvas {
   max-width: 640px;
   max-height: 94vh;
   text-align: left;
-  -webkit-mask-image: url(./resources/images/png/square-inner-rc1.png);
+  -webkit-mask-image: url(./resources/images/png/panel-b.png);
   -webkit-mask-size: 100% 100%;
 }
 
