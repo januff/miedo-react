@@ -37,7 +37,7 @@ body,
 #root::after {
   content: ""; overflow: hidden;
   background-image: url(./resources/images/png/white-paperboard.png);
-  background-size: 100px;
+  background-size: 80px;
   background-blend-mode: difference;
   top: 0;
   left: 0;
@@ -136,7 +136,7 @@ canvas {
   background-color: rgba(0, 0, 0, 0.95);
   background-image: url(./resources/images/png/grid.png);
   background-blend-mode: exclusion;
-  background-size: 100px;
+  background-size: 80px;
   display: flex;
   padding: 1em;
   position: fixed;
