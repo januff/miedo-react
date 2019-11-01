@@ -31,7 +31,7 @@ export default function ImageWebgl({ url1, url2, disp, intensity, hovered }) {
         vertexShader,
         fragmentShader,
       }
-    }, [url1, url2, disp])
+    }, [url1, url2, disp, intensity, invalidate, gl.capabilities])
   
     return (
       <mesh>

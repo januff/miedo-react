@@ -2,12 +2,11 @@ import ReactDOM from 'react-dom'
 import React, { useState } from 'react'
 import { useRoute } from 'wouter'
 import { Titles, Story, Modal, GithubCorner } from './components';
-import { stories, miedo, editora, DOTS, PANEL } from './resources/images'
+import { stories, miedo, editora, PANEL } from './resources/images'
 import { quotes } from "./resources/edit";
 import './styles.css';
 
-
-// Experimenting with style-components below. Appears conducive to abstracting all textures and masks out of CSS and into a master palette of data-URIs,from which more flexible shapes, sizes, and randomizations can be controlled. Need to dig deeper into documentation: https://www.styled-components.com/docs/basics
+// Experimenting with style-components below. Textures and masks out of CSS and into a master palette of data-URIs,from which more flexible shapes, sizes, and randomizations can be controlled. Need to dig deeper into documentation: https://www.styled-components.com/docs/basics
 
 import { createGlobalStyle } from 'styled-components'
 

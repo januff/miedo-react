@@ -32,7 +32,7 @@ const useImage = (url, crossOrigin) => {
         img.removeEventListener('error', onerror);
       };
     },
-    [url, crossOrigin]
+    [url, crossOrigin, setState]
   );
 
   // return array because it it better to use in case of several useImage hooks

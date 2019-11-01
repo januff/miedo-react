@@ -8,7 +8,7 @@ const Modal = ({ title, img, content, onClose }) => {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal panel">
+      <div className="modal">
         {parse(content.quote)}
       </div>
     </div>

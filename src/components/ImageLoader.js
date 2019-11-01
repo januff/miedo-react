@@ -1,10 +1,10 @@
 const ImageLoader = (panels) => {
   const loadTest = new Promise((resolve, reject) => {
-    console.table(panels)
+    // eslint-disable-next-line
     panels.map(imageSet => {
+      // eslint-disable-next-line
       for (var image of imageSet){
         // loadImage(image);
-        console.log(image)
       }
     })
     resolve(panels);
