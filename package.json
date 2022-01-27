@@ -13,7 +13,7 @@
     "react-spring": "^8.0.20",
     "react-three-fiber": "^2.1.1",
     "styled-components": "^4.3.1",
-    "three": "^0.104.0",
+    "three": "^0.137.0",
     "wouter": "^1.2.0"
   },
   "scripts": {
