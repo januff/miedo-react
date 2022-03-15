@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "html-react-parser": "^0.7.1",
-    "lodash-es": "^4.17.11",
+    "lodash-es": "^4.17.21",
     "lottie-web": "^5.5.4",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
